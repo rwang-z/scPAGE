@@ -1,3 +1,3 @@
 path
-./data/casemay10.txt
-./data/ctrlmay10.txt
+./data/casemay10_example.txt
+./data/ctrlmay10_example.txt
