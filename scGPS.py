@@ -79,7 +79,7 @@ def main():
     print('%d DEPs are selected by the pvalue threshold' % num_pair)
 
     # select gene pairs by step forward algorithm
-    res_df = step_forward.get_optimized_pair(train_matrix,train_label,pvalue_threshold,index,num_pair,a,b,c,d,pair_limit)
+    res_df = step_forward.get_optimized_pair(train_matrix,train_label,pvalue_threshold,index,num_pair,a,b,c,d,pair_limit,file_path_flag)
 
     # save results to csv
     if file_path_flag == 'defined':

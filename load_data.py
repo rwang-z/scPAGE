@@ -81,6 +81,7 @@ def load_path(label_flag,file_path_flag):
         train_data_file = './data/train_data_path_default.txt'
     train_path_table = pd.read_table(train_data_file)
     train_path_list = list(train_path_table['path'])
+
     if label_flag == 'path':
         if file_path_flag == 'defined':
             train_label_file = './data/train_label_path.txt'
@@ -97,6 +98,7 @@ def load_path(label_flag,file_path_flag):
         hint_table = pd.read_table(hint_path)
         hint_list = list(hint_table['hint_list'])
         label_path_list = []
+        
     return train_path_list,label_path_list,hint_list
 
 

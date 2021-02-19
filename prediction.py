@@ -13,11 +13,14 @@
 # -- 4: separator when loading data matrix, default '\t'
 
 
-### use the default scGPS in './result/training_results_default.csv'
+### use the scGPS identified from the example data, gene pairs in './result/training_results_default.csv'
 # python prediction.py './data/GSE78691_exp_matrix.txt' './data/GSE78691_label.txt' 30 '' ' '
 
+### use the scGPS identified from all single cells:
+# python prediction.py './data/GSE78691_exp_matrix.txt' './data/GSE78691_label.txt' 30 './result/pair_list.csv' ' '
+
 ### use the identified scGPS in './result/training_results_test.csv'
-# python prediction.py './data/GSE78691_exp_matrix.txt' './data/GSE78691_label.txt' 30 './result/training_results_test.txt' ' '
+# python prediction.py './data/GSE78691_exp_matrix.txt' './data/GSE78691_label.txt' 30 './result/training_results_test.csv' ' '
 
 import sys
 import pandas as pd

@@ -23,7 +23,7 @@ def sfa_iterative(index_ind,k_pair,x_train,y_train,index,a,b,c,d,num_pair):
     return max_auc,max_ind,max_tag
 
 
-def get_optimized_pair(train_x,train_y,pvalue,index,num_pair,a,b,c,d,pair_limit,plot=True):
+def get_optimized_pair(train_x,train_y,pvalue,index,num_pair,a,b,c,d,pair_limit,flag,plot=True):
     # index: index of genes in train_x of each DEP
     k_pair_lst = [i for i in range(1, pair_limit + 1)]  # set of number of features to select
     index_ind = []  # index of pairs selected in index matrix
@@ -47,5 +47,9 @@ def get_optimized_pair(train_x,train_y,pvalue,index,num_pair,a,b,c,d,pair_limit,
         plt.ylabel("AUC",fontsize=15)
         plt.ylim((0,1.03))
         plt.xlim((0,pair_limit + 1))
-        plt.savefig('./figure/training_auc_test.pdf')
+        if flag == 'defined':
+            plt.savefig('./figure/training_auc_test.pdf')
+        elif flag == 'default':
+            plt.savefig('./figure/training_auc_default.pdf')
+            
     return res_df
