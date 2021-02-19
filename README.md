@@ -57,6 +57,8 @@ scGPS identified from your own data saved in ./result/training_results_test.csv'
 
 scGPS in the paper provided in './result/pair_list.csv'.
 
+A curve of AUC with respect to different signature size is saved in './figure/training_auc_test.pdf' for your own data or in './figure/training_auc_default.pdf' for the example data.
+
 
 ## Validate scGPS on test data
 
