@@ -88,7 +88,7 @@ python prediction.py profile_path label_path num_pair signature_path [separator]
 - profile_path: path of data matrix for validation. Profile matrix: row -- gene, column -- cell, tab-seperated.
 - label_path: path of data label. Labels listed in column 'Label'.
 - num_pair: number of gene pairs to use.
-- signature_path: path of file including gene pairs (signature) to test. 
+- signature_path: path of file including gene pairs (signature) to test. If not provided or provided with '', scGPS identified from the example data is used.
 - separator: separator used in loading profile matrix. Default '\t'.
 
 ### Examples
