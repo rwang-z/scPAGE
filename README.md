@@ -19,6 +19,11 @@ Labels could be provided by two ways:
 
 Label 0 and 1 represent normal and disease, respectively. 
 
+Example scRNA-seq data is provided for demonstration with paths listed in './data/train_data_path_default.txt'. There two profile files for normal and disease, respectively, each including 100 cells. Label list is provided in ‘./data/label_list_default.txt’.
+
+A list of leukemia genes for profile filtering is provided in ‘./data/ NCBI_leukemia_mm_gene.txt’.
+
+
 
 ### Usage
 
