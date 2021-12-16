@@ -4,7 +4,8 @@
 
 Identify gene pair signature from single cells.
 
-<img width="1000" alt="image" src="https://user-images.githubusercontent.com/57746198/146361412-4087f10d-9130-467b-b125-ab2af7a68b8e.png">
+![image](https://user-images.githubusercontent.com/57746198/146364178-942adbfc-dd81-47c7-bb1e-4ba1869555e3.png)
+
 
 
 
