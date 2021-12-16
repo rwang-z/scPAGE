@@ -1,9 +1,10 @@
-# scGPS
+# scPAGE: Transfer gene signatures from single cells to bulk data
 
 ## Introduction
 
 Identify gene pair signature from single cells.
 
+[fig_1.pdf](https://github.com/rwangsunshine/scPAGE/files/7726777/fig_1.pdf)
 
 
 ## Identification of scGPS using your own data
