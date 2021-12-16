@@ -4,7 +4,8 @@
 
 Identify gene pair signature from single cells.
 
-[fig_1.pdf](https://github.com/rwangsunshine/scPAGE/files/7726777/fig_1.pdf)
+<img width="452" alt="image" src="https://user-images.githubusercontent.com/57746198/146361412-4087f10d-9130-467b-b125-ab2af7a68b8e.png">
+
 
 
 ## Identification of scGPS using your own data
