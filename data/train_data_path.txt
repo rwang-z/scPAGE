@@ -1,3 +1,0 @@
-path
-./data/casemay10_example.txt
-./data/ctrlmay10_example.txt
