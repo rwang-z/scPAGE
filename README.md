@@ -14,7 +14,7 @@ Python 3.6
 
 Python packages: pandas, numpy, matplotlib, statsmodels, fisher, sklearn, time, tqdm, collections, sys
 
-Platform: Limux
+Platform: Linux
 
 
 ## Identification of scGPS from single cells
