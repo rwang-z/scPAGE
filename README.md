@@ -70,13 +70,17 @@ We also provide a list of human immune genes retrieved from InnateDB in 'innateD
 ```
 
 - data_flag:
-  - 'example': using the example data for training, loading files in './data/train_data_path_default.txt'
-  - 'user-provided': using the data provided by user, loading files in './data/train_data_path.txt'
+
+- 'example': using the example data for training, loading files in './data/train_data_path_default.txt'
+
+- 'user-provided': using the data provided by user, loading files in './data/train_data_path.txt'
 
 - gene_path: the path of the gene list file used to filter the expression profiles. 
 
 - label_flag:
+
   - 'path': using separate label files containing the labels of the samples/cells for the expression profiles and list the paths in './data/train_label_path.txt'.
+
   - 'list': using a list of labels (stored in './data/train_label_list.txt') where each element indicates the label for an expression profile.
 
 - separator: separator used in loading profile matrix. Default '\t'.
@@ -97,11 +101,13 @@ We also provide a list of human immune genes retrieved from InnateDB in 'innateD
 - Using your own data and label files (using the mouse leukemia-related genes to filter the expression profiles):
 
   - Using separate files to indicate labels
+  
   ```
   > python scGPS.py 'user-provided' './data/NCBI_leukemia_mm_gene.txt' 'path'
   ```
   
   - Using a label list
+  
   ```
   > python scGPS.py 'user-provided' './data/NCBI_leukemia_mm_gene.txt' 'list'
   ```
@@ -162,8 +168,11 @@ Three example bulk RNA-seq datasets of mouse leukemia are provided:
 - output_path: the path of the file to output the predicted scores of the test samples.
 
 - signature_flag: the scGPS used for prediction
+
   - 'example': using the scGPS identified from the example training data (stored in './result/training_results_default.txt').
+
   - 'signature': using the scGPS identified in the paper (stored in './result/pair_list.txt').
+  
   - 'user-provided': using the scGPS identified from the data provided by the user (stored in './result/training_results.txt').
 
 - num_pair: the signature size of scGPS used for prediction. num_pair = 30 when using the scGPS identified in the paper. 
@@ -180,11 +189,13 @@ Three example bulk RNA-seq datasets of mouse leukemia are provided:
 ```
 
 - Test the scGPS identified from all single cells in the paper:
+
 ```
 > python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'signature' 30
 ```
 
 - Test the scGPS identified from the data provided by users:
+
 ```
 > python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'user-provided' 30
 ```
