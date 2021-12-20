@@ -14,7 +14,7 @@ Python 3.6
 
 Python packages: pandas, numpy, matplotlib, statsmodels, fisher, sklearn, time, tqdm, collections, sys
 
-
+Platform: Limux
 
 
 ## Identification of scGPS from single cells
@@ -66,7 +66,7 @@ We also provide a list of human immune genes retrieved from InnateDB in 'innateD
 ### Usage
 
 ```
-python scGPS.py data_flag gene_path label_flag [separator] [max_size] [pvalue_thresh]
+> python scGPS.py data_flag gene_path label_flag [separator] [max_size] [pvalue_thresh]
 ```
 
 - data_flag:
@@ -91,19 +91,19 @@ python scGPS.py data_flag gene_path label_flag [separator] [max_size] [pvalue_th
 - Identify scGPS using the example data:
 
 ```
-python scGPS.py 'example'
+> python scGPS.py 'example'
 ```
 
 - Using your own data and label files (using the mouse leukemia-related genes to filter the expression profiles):
 
   - Using separate files to indicate labels
   ```
-  python scGPS.py 'user-provided' './data/NCBI_leukemia_mm_gene.txt' 'path'
+  > python scGPS.py 'user-provided' './data/NCBI_leukemia_mm_gene.txt' 'path'
   ```
   
   - Using a label list
   ```
-  python scGPS.py 'user-provided' './data/NCBI_leukemia_mm_gene.txt' 'list'
+  > python scGPS.py 'user-provided' './data/NCBI_leukemia_mm_gene.txt' 'list'
   ```
 
 
@@ -151,7 +151,7 @@ Three example bulk RNA-seq datasets of mouse leukemia are provided:
 ### Usage
 
 ```
-python prediction.py profile_path label_path output_path signature_flag num_pair [separator]
+> python prediction.py profile_path label_path output_path signature_flag num_pair [separator]
 ```
 
 - profile_path: the path of expression profile for validation.
@@ -176,17 +176,17 @@ python prediction.py profile_path label_path output_path signature_flag num_pair
 - Test the scGPS identified from the example data:
 
 ```
-python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'example' 30
+> python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'example' 30
 ```
 
 - Test the scGPS identified from all single cells in the paper:
 ```
-python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'signature' 30
+> python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'signature' 30
 ```
 
 - Test the scGPS identified from the data provided by users:
 ```
-python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'user-provided' 30
+> python prediction.py './data/GSE119299_exp_matrix.txt' './data/GSE119299_label.txt' './result/GSE119299_pred.txt' 'user-provided' 30
 ```
 
 
