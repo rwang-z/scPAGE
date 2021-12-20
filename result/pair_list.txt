@@ -1,1 +1,31 @@
-
+pairs	tag
+['Crabp2', 'Blnk']	-1
+['Fgf4', 'Blnk']	-1
+['Sox1', 'Il7r']	-1
+['Nr5a2', 'Il7r']	-1
+['Flt3', 'Cd19']	-1
+['Ptcra', 'Pax5']	-1
+['Fgf4', 'Bcl11a']	-1
+['Gdf9', 'Gata1']	-1
+['Gli1', 'Cxcr2']	-1
+['Crabp2', 'Adora2b']	-1
+['Gli1', 'Bcl11a']	-1
+['Vtn', 'Irf4']	-1
+['Fgf4', 'Adora2b']	-1
+['Gldc', 'Gata1']	-1
+['Ina', 'Bach2']	-1
+['H2-T3', 'Bcl11a']	-1
+['Gldc', 'Blk']	-1
+['Inca1', 'Gata1']	-1
+['Fgf4', 'Cd226']	-1
+['Shh', 'Capn5']	1
+['Bcl2a1a', 'a']	1
+['Ell3', 'Egln3']	1
+['Cd8a', 'Cd28']	1
+['Il1a', 'Gstt2']	1
+['Klrg1', 'Chd7']	1
+['Havcr2', 'Gfi1']	1
+['Klrg1', 'Hoxa9']	1
+['Ildr1', 'Cdkn1a']	1
+['Pdcd1', 'Ltb4r1']	1
+['Klrg1', 'Ifngr1']	1
