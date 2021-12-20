@@ -69,13 +69,13 @@ We also provide a list of human immune genes retrieved from InnateDB in 'innateD
 python scGPS.py data_flag gene_path label_flag [separator] [max_size] [pvalue_thresh]
 ```
 
-- data_flag
+- data_flag:
   - 'example': using the example data for training, loading files in './data/train_data_path_default.txt'
   - 'user-provided': using the data provided by user, loading files in './data/train_data_path.txt'
 
 - gene_path: the path of the gene list file used to filter the expression profiles. 
 
-- label_flag
+- label_flag:
   - 'path': using separate label files containing the labels of the samples/cells for the expression profiles and list the paths in './data/train_label_path.txt'.
   - 'list': using a list of labels (stored in './data/train_label_list.txt') where each element indicates the label for an expression profile.
 
@@ -111,11 +111,11 @@ python scGPS.py 'example'
 
 The program will save the results in a file including the gene pairs selected for scGPS, the corresponding tags ('1' for 'disease-positive' and '-1' for 'normal-positive') and AUC after adding the pair to the scGPS.
 
-The results of the example data will be saved in './result/training_results_default.txt.
+- The results of the example data will be saved in './result/training_results_default.txt.
 
-The results of the user-provided data will be saved in ./result/training_results.txt.
+- The results of the user-provided data will be saved in ./result/training_results.txt.
 
-scGPS of mouse leukemia identifed in the paper is provided in './result/pair_list.txt'.
+- scGPS of mouse leukemia identifed in the paper is provided in './result/pair_list.txt'.
 
 A curve demonstrating AUC with respect to different signature sizes is saved in './figure/training_auc.pdf' for your own data or in './figure/training_auc_default.pdf' for the example data.
 
