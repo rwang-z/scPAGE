@@ -7,21 +7,20 @@ from sklearn import metrics
 import time
 from tqdm import tqdm
 import collections
+import pandas as pd
 
 def profile_preprocessing(data):
     # merge duplicate genes
     data = data.T
     # check duplicate genes
     genes = list(data.keys())
-    print('Finding duplicate genes...')
+    print('Detecting duplicate genes...')
     duplicated_gene = [item for item, count in collections.Counter(genes).items() if count > 1]
-    print('processing duplicate genes')
+    print('Processing duplicate genes')
     for gene in duplicated_gene:
-        print('gene: %s' % gene)
         if pd.notna(gene):
             if gene in data.keys():
                 dup_cols = data[gene]
-                print(dup_cols.shape)
                 data = data.drop(gene,axis=1)
                 mean_col = dup_cols.mean(axis=1)
                 data[gene] = mean_col
@@ -130,7 +129,7 @@ def get_test_drop_gene(test_data,gene_pairs):
         print("%d genes in scGPS not detected in the test dataset" % len(drop_gene))
         print("They are: %s" % str(drop_gene))
     else:
-        print("all the gene matched")
+        print("All genes in scGPS detected in the test dataset")
     return drop_gene
 
 def convert_pair_str_2_list(pair_str):
@@ -146,7 +145,7 @@ def convert_pair_str_2_list(pair_str):
         # print(pair_new)
     return pair_list
 
-def pair_2_pair_index(drop_gene,pair_list):
+def pair_2_pair_index(drop_gene,pair_list,tags):
     dele=[]
     pair_index = np.array([[pair[0] for pair in pair_list],[pair[1] for pair in pair_list]])  # reshape to 2 by x
     if len(drop_gene) > 0:
@@ -154,10 +153,13 @@ def pair_2_pair_index(drop_gene,pair_list):
             for i in range(pair_index.shape[1]):
                 if gene in pair_index[:,i]:
                     dele.append(i)
-        new_index = np.delete(pair_index,dele,axis=1)      
+        dele = list(set(dele))
+        new_index = np.delete(pair_index,dele,axis=1)
+        new_tags = np.delete(tags,dele,axis=0)
     else:
         new_index = pair_index
-    return new_index
+        new_tags = tags
+    return new_index, new_tags
 
 def pairconvert_test(data,gene_pair_index):
     # convert expression matrix (data, sample by gene) to 1/-1
@@ -171,9 +173,9 @@ def test_rank_ratio(test_data,test_label,pair_index,tag):
     num_pair = rankdata.shape[1]
     rankpredt_more = np.squeeze(np.sum(rankdata, axis = 1))/num_pair
     auc = metrics.roc_auc_score(test_label, rankpredt_more)
-    return auc
+    return auc, rankpredt_more
 
 def test_bulk_sc(drop_gene,test_data,test_label,gene_pairs,tag):
-    pair_index = pair_2_pair_index(drop_gene, gene_pairs)
-    test_auc = test_rank_ratio(test_data,test_label,pair_index,tag)
-    return test_auc
+    pair_index, pair_tags = pair_2_pair_index(drop_gene, gene_pairs, tag)
+    test_auc, pred_score = test_rank_ratio(test_data,test_label,pair_index,pair_tags)
+    return test_auc, pred_score

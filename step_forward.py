@@ -19,7 +19,7 @@ def sfa_iterative(index_ind,k_pair,x_train,y_train,index,a,b,c,d,num_pair):
             max_ind = i
             max_auc = rankauc
     max_tag = utils.tag_assignment(index,max_ind,a,b,c,d)
-    print("The best training result of %d pairs is: %.4f" % (k_pair,max_auc))
+    print("The best training result of %d pairs: %.4f" % (k_pair,max_auc))
     return max_auc,max_ind,max_tag
 
 
@@ -47,9 +47,9 @@ def get_optimized_pair(train_x,train_y,pvalue,index,num_pair,a,b,c,d,pair_limit,
         plt.ylabel("AUC",fontsize=15)
         plt.ylim((0,1.03))
         plt.xlim((0,pair_limit + 1))
-        if flag == 'defined':
-            plt.savefig('./figure/training_auc_test.pdf')
-        elif flag == 'default':
+        if flag == 'user-provided':
+            plt.savefig('./figure/training_auc.pdf')
+        elif flag == 'example':
             plt.savefig('./figure/training_auc_default.pdf')
             
     return res_df

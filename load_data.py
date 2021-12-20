@@ -75,26 +75,26 @@ def train_data_preprocessing(train_dir_list,label_dir_list,hint_list,filter_gene
 
 
 def load_path(label_flag,file_path_flag):
-    if file_path_flag == 'defined':
+    if file_path_flag == 'user-provided':
         train_data_file = './data/train_data_path.txt'
-    elif file_path_flag == 'default':
+    elif file_path_flag == 'example':
         train_data_file = './data/train_data_path_default.txt'
     train_path_table = pd.read_table(train_data_file)
     train_path_list = list(train_path_table['path'])
 
     if label_flag == 'path':
-        if file_path_flag == 'defined':
+        if file_path_flag == 'user-provided':
             train_label_file = './data/train_label_path.txt'
-        elif file_path_flag == 'default':
+        elif file_path_flag == 'example':
             train_label_file = './data/train_label_path_default.txt'
         train_label_table = pd.read_table(train_label_file)
         label_path_list = list(train_label_table['path'])
         hint_list = []
     elif label_flag == 'list':
-        if file_path_flag == 'defined':
-            hint_path = './data/label_list.txt'
-        elif file_path_flag == 'default':
-            hint_path = './data/label_list_default.txt'
+        if file_path_flag == 'user-provided':
+            hint_path = './data/train_label_list.txt'
+        elif file_path_flag == 'example':
+            hint_path = './data/train_label_list_default.txt'
         hint_table = pd.read_table(hint_path)
         hint_list = list(hint_table['hint_list'])
         label_path_list = []
