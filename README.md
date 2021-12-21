@@ -2,9 +2,11 @@
 
 ## Introduction
 
-scPAGE is a method to identify gene expression signatures from single cells which were transferable and applicable to bulk data analysis. 
+scPAGE is a method to identify single-cell gene pair signatures (scGPSs) which were transferable and applicable to bulk data analysis. 
 
 For more details, please read our paper: Improving bulk RNA-seq classification of acute myeloid leukemia by gene signature transfer from single cells. 
+
+Workflow of the mehtod:
 
 ![image](https://user-images.githubusercontent.com/57746198/146364178-942adbfc-dd81-47c7-bb1e-4ba1869555e3.png)
 
