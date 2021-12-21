@@ -71,9 +71,9 @@ We also provide a list of human immune genes retrieved from InnateDB in 'innateD
 
 - data_flag:
 
-- 'example': using the example data for training, loading files in './data/train_data_path_default.txt'
+  - 'example': using the example data for training, loading files in './data/train_data_path_default.txt'
 
-- 'user-provided': using the data provided by user, loading files in './data/train_data_path.txt'
+  - 'user-provided': using the data provided by user, loading files in './data/train_data_path.txt'
 
 - gene_path: the path of the gene list file used to filter the expression profiles. 
 
