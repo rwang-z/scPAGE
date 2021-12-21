@@ -10,11 +10,11 @@ For more details, please read our paper: Improving bulk RNA-seq classification o
 
 
 ## Prerequisite
-Python 3.6
+**Python 3.6**
 
-Python packages: pandas, numpy, matplotlib, statsmodels, fisher, sklearn, time, tqdm, collections, sys
+**Python packages**: pandas, numpy, matplotlib, statsmodels, fisher, sklearn, time, tqdm, collections, sys
 
-Platform: Linux
+**Platform**: Linux
 
 
 ## Identification of scGPS from single cells
@@ -34,7 +34,7 @@ The mouse luekemia-related genes retrieved from NCBI to filter the expression pr
 
 
 
-- **To use other datasets for scGPS identification, please prepare the required files as follows:**
+- **Prepare your own data for scGPS identification:**
 
 **1. Expression profiles**
 
@@ -48,19 +48,19 @@ Label 0 and 1 represent normal and disease, respectively.
 
 Labels could be provided in two ways according to the expression profiles:
 
-(1) If the cells/samples in the same expression profile belong to different classes, a separate label file (tab-separated) is required for each expression profile, in which the labels of the cells/samples are listed with the column name 'Label' in the same order as the cell/samples in the corresponding expression profile. List the paths of the label files in './data/train_label_path.txt' with the column name 'path'. 
+- If the cells/samples in the same expression profile belong to different classes, a separate label file (tab-separated) is required for each expression profile, in which the labels of the cells/samples are listed with the column name 'Label' in the same order as the cell/samples in the corresponding expression profile. List the paths of the label files in './data/train_label_path.txt' with the column name 'path'. 
 
-(2) If all of the cells/samples in the same expression profile belong to the same class, users could use a list of labels where each element indicates the label for an expression profile. The label list should be stored with the column name 'hint_list' in './data/train_label_list.txt'. 
+- If all of the cells/samples in the same expression profile belong to the same class, users could use a list of labels where each element indicates the label for an expression profile. The label list should be stored with the column name 'hint_list' in './data/train_label_list.txt'. 
 
 In both of the methods, please make sure that the paths of the label files or the labels in the list are sequenced in the same order as the corresponding expression profiles listed in './data/train_data_path.txt'.
 
 **3. Gene list**
 
-A file (tab-separated) containing a column 'Symbol' of a list of genes used to filter the expression profile. We recommend to use the related genes of the disease. 
+A file (tab-separated) containing a column 'Symbol' of a list of genes used to filter the expression profile. We recommend to use the related genes of the disease. Users could prepare their own gene lists of interest or use the following two gene lists provided along with the code:
 
-Mouse leukemia-related genes used for the example data are listed in './data/NCBI_leukemia_mm_gene.txt'. 
+-	The mouse leukemia-related genes used for the example data are listed in './data/NCBI_leukemia_mm_gene.txt'. 
 
-We also provide a list of human immune genes retrieved from InnateDB in 'innateDB_immune_genes_human.txt'. 
+-	The human immune genes retrieved from InnateDB are listed in 'innateDB_immune_genes_human.txt'. 
 
 
 ### Usage
