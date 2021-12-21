@@ -135,14 +135,11 @@ def get_test_drop_gene(test_data,gene_pairs):
 def convert_pair_str_2_list(pair_str):
     pair_list = []
     for pair in pair_str:
-        # print('Pair string: %s' % pair)
         str_list_1 = pair.split('\'')
         gene_1 = str_list_1[1]
         gene_2 = str_list_1[3]
         pair_new = [gene_1, gene_2]
         pair_list.append(pair_new)
-        # print('Splited pair:')
-        # print(pair_new)
     return pair_list
 
 def pair_2_pair_index(drop_gene,pair_list,tags):
@@ -159,7 +156,7 @@ def pair_2_pair_index(drop_gene,pair_list,tags):
     else:
         new_index = pair_index
         new_tags = tags
-    if len(new_tags == 0):
+    if len(new_tags) == 0:
         print('No pair in the scGPS detected in the test dataset!')
         exit()
     return new_index, new_tags
