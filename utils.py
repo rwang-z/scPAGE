@@ -159,6 +159,9 @@ def pair_2_pair_index(drop_gene,pair_list,tags):
     else:
         new_index = pair_index
         new_tags = tags
+    if len(new_tags == 0):
+        print('No pair in the scGPS detected in the test dataset!')
+        exit()
     return new_index, new_tags
 
 def pairconvert_test(data,gene_pair_index):

@@ -1,11 +1,13 @@
 # coding: utf-8
 # To identify scGPS from single-cell RNA-seq data
+# Publication: Improving bulk RNA-seq classification of acute myeloid leukemia by gene signature transfer from single cells
 
-### Data preparation: see https://github.com/rwangsunshine/scPAGE
-# Paths of expression profiles for training listed in: 
+### Data preparation and more details: see https://github.com/rwangsunshine/scPAGE
+# Paths of expression profiles for training: 
 #       -- demonstration data: './data/train_data_path_default.txt'
 #       -- user-provided data: './data/train_data_path.txt'
-# Labels (paths) listed in './data/train_label_path.txt' (paths) or './data/train_label_list.txt' (indicators)
+# Labels or paths of label files listed in './data/train_label_list.txt' (list) or './data/train_label_path.txt' (paths)
+# Gene list: a file (tab-separated) containing a column 'Symbol' of genes used to filter the expression profile.
 
 ### Usage
 # python scGPS.py data_flag gene_path label_flag [separator] [max_size] [pvalue_thresh]
@@ -14,7 +16,7 @@
 # data_flag: 
 #       -- 'example': using the example data for training, loading files in './data/train_data_path_default.txt'
 #       -- 'user-provided': using the data provided by user, loading files in './data/train_data_path.txt'
-# gene_path: path of a gene list file to filter the profile. 
+# gene_path: path of a gene list file to filter the expression profile. 
 #       The file './data/NCBI_leukemia_mm_gene.txt' including the mouse leukemia-related genes retrieved from NCBI is used when identifying scGPS from the example data. 
 #       We also provide a list of human immune genes retrieved from InnateDB in './data/innateDB_immune_genes_human.txt'.
 #       Other genes could be used by providing the path of the file (tab-separated). Genes shouled be listed with the column name 'Symbol'. 
