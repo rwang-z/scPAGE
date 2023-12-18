@@ -58,7 +58,7 @@ In both of the methods, please make sure that the paths of the label files or th
 
 A tab-separated file containing a column **'Symbol'** of genes used to filter the expression profile. We recommend to use the related genes of the disease. Users could prepare their own gene lists of interest or use the following two gene lists provided along with the code:
 
--	-	The mouse leukemia-related genes retrieved from NCBI are listed in **'./data/NCBI_leukemia_mm_gene.txt'**. This gene list is used to filter the example data.. 
+-	The mouse leukemia-related genes retrieved from NCBI are listed in **'./data/NCBI_leukemia_mm_gene.txt'**. This gene list is used to filter the example data.. 
 
 -	The human immune genes retrieved from InnateDB are listed in **'innateDB_immune_genes_human.txt'**. 
 
